@@ -1,0 +1,85 @@
+@use "./font";
+section.section-services {
+	padding: clamp(20px, 5vw, 60px);
+	width: 100%;
+	height: 100%;
+	div.services-heading-section {
+		h5 {
+			font-family: "BW-Gradual-Bold", sans-serif;
+			font-size: clamp(2rem, 5.5vw, 6rem);
+			-webkit-text-stroke: 1px #31ff41;
+			color: transparent;
+		}
+		p {
+			font-family: "Urbanist", sans-serif;
+			font-size: clamp(1.25rem, 2vw, 2.5rem);
+			color: #666666;
+			line-height: 1.6;
+		}
+	}
+	div.services-content-section {
+		display: grid;
+        margin-top: clamp(20px, 5vw, 60px);
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: clamp(20px, 5vw, 60px);
+        div.service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border:1px solid #31ff41;
+            border-radius: 10px;
+            padding: clamp(15px, 3vw, 30px);
+            box-shadow: 0 4px 6px rgba(49, 255, 65, .5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 12px rgba(49, 255, 65, 0.2);
+            }
+            h6 {
+                font-family: "BW-Gradual-Bold", sans-serif;
+                font-size: clamp(1.5rem, 4vw, 2.75rem);
+                margin-bottom: clamp(10px, 2vw, 20px);
+                color: #888;
+                text-align: center;
+                text-transform: capitalize;
+            }
+            p {
+                font-family: "Urbanist", sans-serif;
+                font-size: clamp(1rem, 2vw, 1.75rem);
+                color: #ccc;
+                text-align: center;
+                margin-bottom: clamp(10px, 2vw, 20px);
+                line-height: 1.5;
+            }
+        }
+	}
+}
+@media (max-width: 768px) {
+	section.section-services {
+		padding: clamp(15px, 5vw, 40px);
+		div.services-heading-section {
+			h5 {
+				font-size: clamp(1.5rem, 6vw, 4rem);
+			}
+			p {
+				font-size: clamp(1rem, 3vw, 2rem);
+			}
+		}
+        div.services-content-section {
+            grid-template-columns: 1fr;
+            gap: clamp(15px, 4vw, 30px);
+            div.service-card {
+                padding: clamp(10px, 2vw, 20px);
+                h6 {
+                    font-size: clamp(1.25rem, 3vw, 2rem);
+                }
+                p {
+                    font-size: clamp(1rem, 2vw, 1.5rem);
+                }
+            }
+        }
+	}
+}

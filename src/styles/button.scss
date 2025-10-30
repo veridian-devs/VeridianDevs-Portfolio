@@ -1,0 +1,15 @@
+@use "sass:color";
+@mixin button($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: 1px solid $bg-color;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: $bg-color;
+    }
+    
+}

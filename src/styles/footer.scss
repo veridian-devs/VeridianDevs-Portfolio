@@ -1,0 +1,114 @@
+@use "./font";
+footer {
+	height: 100%;
+	width: 100%;
+	padding: clamp(20px, 5vw, 60px);
+	border: 1px solid #37ff14;
+	border-bottom: none;
+	border-radius: 50px 50px 0 0;
+	background: #000;
+	color: #fff;
+	font-family: "Urbanist", sans-serif;
+	display: grid;
+	gap: clamp(10px, 2vw, 30px);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 3fr 1fr;
+	grid-template-areas:
+		"logo logo legal social"
+		"logo logo legal social"
+		"faded-text faded-text faded-text faded-text";
+        @media (max-width: 768px) {
+            text-align: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas:
+                "logo logo"
+                "legal legal"
+                "social social"
+                "faded-text faded-text";
+        }
+	div.logo-copyright-section {
+		grid-area: logo;
+		display: flex;
+		flex-direction: column;
+		div {
+			display: flex;
+			align-items: center;
+			gap: 0px;
+            @media (max-width: 768px) {
+                justify-content: center;
+            }
+			img {
+				height: clamp(80px, 6vw, 250px);
+			}
+			h6 {
+				color: #fff;
+				font-size: clamp(1.75rem, 2.75vw, 4.1rem);
+				font-family: "BW-Gradual-Med", sans-serif;
+			}
+		}
+		p {
+            padding-left: clamp(5px, 3vw, 50px);
+			font-size: clamp(0.75rem, 1.5vw, 2rem);
+			color: #666666;
+		}
+	}
+	div.legal-section {
+		grid-area: legal;
+		display: flex;
+		flex-direction: column;
+        margin-top: clamp(20px, 3vw, 60px);
+		gap: clamp(5px, 1vw, 25px);
+        p.footer-heading{
+            font-weight: bold;
+            font-size: clamp(1rem, 1.5vw, 2.5rem);
+        }
+		a {
+            width: fit-content;
+			color: #969696;
+			text-decoration: none;
+			font-size: clamp(0.75rem, 1.25vw, 2rem);
+			&:hover {
+				color: #31ff41;
+			}
+		}
+		@media (max-width: 768px) {
+			align-items: center;
+		}
+	}
+	div.socialmedia-handles {
+		grid-area: social;
+		display: flex;
+		
+        flex-direction: column;
+        margin-top: clamp(20px, 3vw, 60px);
+		gap: clamp(5px, 1vw, 25px);
+        p.footer-heading{
+            font-weight: bold;
+            font-size: clamp(1rem, 1.5vw, 2.5rem);
+        }
+		a {
+            width: fit-content;
+			color: #969696;
+			font-size: clamp(.75rem, 1.25vw, 2rem);
+            text-decoration: none;
+			&:hover {
+				color: #37ff14;
+			}
+		}
+		@media (max-width: 768px) {
+			align-items: center;
+		}
+
+	}
+	div.faded-logo-text {
+		grid-area: faded-text;
+		font-family: "BW-Gradual-Bold-Italic", sans-serif;
+        text-align: center;
+        background: linear-gradient(to bottom, #000 60%, #31ff41);
+        background-clip: text;
+		font-size: clamp(1.5rem, 12vw, 18rem);
+		-webkit-text-stroke: 1px #31ff41;
+		color: transparent;
+	}
+}

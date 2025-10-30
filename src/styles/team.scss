@@ -1,0 +1,106 @@
+@use "./font";
+
+section.section-team {
+	padding: clamp(20px, 5vw, 60px);
+	width: 100%;
+	height: 100%;
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(20px, 3vw, 40px);
+	div.team-heading-section {
+		width: 100%;
+		h3 {
+			font-family: "BW-Gradual-Bold", sans-serif;
+			font-size: clamp(2rem, 5.5vw, 6rem);
+			-webkit-text-stroke: 1px #31ff41;
+			color: transparent;
+			@media (max-width: 768px) {
+				font-size: clamp(1.5rem, 6vw, 4rem);
+			}
+		}
+		p {
+			font-family: "Urbanist", sans-serif;
+			font-size: clamp(1.25rem, 2vw, 2.5rem);
+			color: #666666;
+			line-height: 1.6;
+			@media (max-width: 768px) {
+				font-size: clamp(1rem, 3vw, 2rem);
+			}
+		}
+	}
+	div.team-members-container {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: clamp(20px, 5vw, 60px);
+		div.team-member-card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: clamp(10px, 2vw, 20px);
+			width: 100%;
+			height: 100%;
+			border: 1px solid #31ff41;
+			border-radius: 10px;
+			padding: clamp(15px, 3vw, 30px);
+			@media (max-width: 768px) {
+				padding: clamp(10px, 2vw, 20px);
+			}
+			img {
+				width: clamp(100px, 15vw, 150px);
+				height: clamp(100px, 15vw, 150px);
+				border-radius: 50%;
+				object-fit: cover;
+				border: 2px solid #37ff14ad;
+			}
+			h3 {
+				color: #37ff14;
+				font-size: clamp(1.25rem, 2vw, 2rem);
+				font-family: "BW-Gradual-Med", sans-serif;
+				@media (max-width: 768px) {
+					font-size: clamp(1.25rem, 3vw, 2rem);
+				}
+			}
+			h4 {
+				color: #fff;
+				font-size: clamp(1rem, 1.5vw, 1.5rem);
+				font-family: "Urbanist", sans-serif;
+				@media (max-width: 768px) {
+					font-size: clamp(1rem, 2vw, 1.5rem);
+				}
+			}
+			p {
+				width: fit-content;
+				color: #fff;
+				font-size: clamp(1rem, 1.5vw, 1.5rem);
+				font-family: "Urbanist", sans-serif;
+				text-align: center;
+				@media (max-width: 768px) {
+					font-size: clamp(1rem, 2vw, 1.5rem);
+				}
+			}
+			div.social-links {
+				display: flex;
+				gap: clamp(5px, 1.25vw, 15px);
+				a {
+					color: #37ff14;
+					font-size: clamp(1.25rem, 2vw, 2rem);
+					transition: color 0.3s;
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);
+			gap: clamp(15px, 4vw, 30px);
+		}
+	}
+}
+

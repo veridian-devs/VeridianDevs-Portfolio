@@ -1,0 +1,101 @@
+@use "./font.scss";
+@use "./button.scss";
+section.section-work {
+	padding: clamp(20px, 3vw, 60px);
+	background: #f8f8f8;
+	border-radius: 0 0 50px 50px;
+	div.work-content {
+		width: 100%;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: clamp(20px, 2vw, 40px);
+		div.work-heading-top-section {
+			width: 45%;
+			height: 100%;
+			h3 {
+				margin: 0 auto;
+				width: fit-content;
+				font-size: clamp(2.5rem, 5vw, 7rem);
+				font-family: "BW-Gradual-Bold", sans-serif;
+				color: #000000;
+				text-align: center;
+				line-height: clamp(2.5rem, 5vw, 7rem);
+			}
+		}
+		div.work-content-bottom-section {
+			width: 55%;
+			display: flex;
+			gap: clamp(15px, 1vw, 30px);
+			overflow-x: hidden;
+			border-left: 2px solid #31ff41;
+			border-right: 2px solid #31ff41;
+			border-radius: 25px;
+			div.image-loop {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: clamp(15px, 1vw, 30px);
+				animation: horizontalScroll 10s linear infinite;
+
+				div.work-image-container {
+					position: relative;
+					overflow: hidden;
+					img {
+						height: clamp(150px, 20vw, 600px);
+						border-radius: 10px;
+						object-fit: cover;
+					}
+					a {
+						position: absolute;
+						inset: 0;
+						height: 100%;
+						width: 100%;
+						background: #31ff4226;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						opacity: 0;
+						transition: opacity 0.3s ease;
+						border-radius: 10px;
+						text-decoration: none;
+						span {
+							@include button.button(#37ff14e6, #000);
+							border-radius: 10px;
+							font-size: clamp(1rem, 1.5vw, 2rem);
+							font-family: "Urbanist", sans-serif;
+							transition: opacity 0.3s ease;
+							pointer-events: none;
+						}
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			&:hover div.image-loop {
+				animation-play-state: paused;
+			}
+		}
+	}
+}
+@keyframes horizontalScroll {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+@media (max-width: 768px) {
+	section.section-work {
+		div.work-content {
+			flex-direction: column;
+			div.work-heading-top-section,
+			div.work-content-bottom-section {
+				width: 100%;
+			}
+		}
+	}
+	
+}
