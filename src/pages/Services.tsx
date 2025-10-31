@@ -1,8 +1,9 @@
+import { Element } from 'react-scroll';
 import '../styles/services.scss';
 
 export default function Services() {
     return (
-        <section className="section-services">
+        <Element name='services' className="section-services">
             <div className="services-heading-section">
                 <h5>Our Services</h5>
                 <p>Comprehensive solutions tailored to your digital needs.</p>
@@ -33,6 +34,6 @@ export default function Services() {
                     <p>Providing expert advice to help you navigate the complexities of technology.</p>
                 </div>
             </div>
-        </section>
+        </Element>
     )
 }

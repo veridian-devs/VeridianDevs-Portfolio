@@ -1,6 +1,7 @@
 import '../styles/comparision.scss'
 import timelineVideo from '../assets/sphere.mp4'
 import { Timeline } from '../components/Timeline';
+import { Element } from 'react-scroll';
 export default function Comparision() {
     const timelineData = [{
         title: '01. Expert Developer and Designer.',
@@ -16,7 +17,7 @@ export default function Comparision() {
         content: (<p className='timeline-dark__entry-content'>Stay informed with daily updates on project progress, milestones achieved, and upcoming tasks to ensure transparency and alignment.</p>)
     }];
     return (
-        <section className="section-comparision">
+        <Element name='comparision' className="section-comparision">
             <div className="comparision-heading-section">
                 <h4>Why Veridian Devs?</h4>
                 <p>Because we deliver exceptional digital solutions that drive results.</p>
@@ -34,6 +35,6 @@ export default function Comparision() {
                     <Timeline data={timelineData} />
                 </div>
             </div>
-        </section>
+        </Element>
     )
 }

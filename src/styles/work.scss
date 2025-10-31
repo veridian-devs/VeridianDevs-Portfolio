@@ -1,6 +1,6 @@
 @use "./font.scss";
 @use "./button.scss";
-section.section-work {
+.section-work {
 	padding: clamp(20px, 3vw, 60px);
 	background: #f8f8f8;
 	border-radius: 0 0 50px 50px;

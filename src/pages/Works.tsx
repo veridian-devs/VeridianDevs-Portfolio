@@ -1,3 +1,4 @@
+import { Element } from 'react-scroll';
 import '../styles/work.scss';
 
 export default function Works() {
@@ -34,7 +35,7 @@ export default function Works() {
         },
     ];
     return (
-        <section className="section-work">
+        <Element name='works' className="section-work">
             <div className="work-content">
                 <div className="work-heading-top-section">
                     <h3>Our Works</h3>
@@ -62,6 +63,6 @@ export default function Works() {
                     </div>
                 </div>
             </div>
-        </section>
+        </Element>
     )
 }
