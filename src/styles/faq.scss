@@ -32,14 +32,16 @@ section.faq-section {
 			padding: clamp(15px, 3vw, 30px) 0;
 			border-bottom: 1px solid #31ff41;
 			overflow: hidden;
-
+            @media (max-width: 768px) {
+                width: 100%;
+            }
 			div.quesBx {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				cursor: pointer;
 				h6 {
-					font-family: "Urbanist", sans-serif;
+					font-family: "BW-Gradual-Med", sans-serif;
 					font-size: clamp(1.25rem, 2vw, 2rem);
 					color: #888;
 				}

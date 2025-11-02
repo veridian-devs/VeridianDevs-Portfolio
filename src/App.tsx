@@ -1,5 +1,4 @@
 import './styles/app.scss';
-import bgVideo from './assets/bg.mp4';
 import About from './pages/About';
 import Works from './pages/Works';
 import Comparision from './pages/Comparision';
@@ -74,7 +73,7 @@ export default function App() {
 			<section className="section-hero">
 				{/* Background Video */}
 				<video className="background-video" autoPlay loop muted playsInline>
-					<source src={bgVideo} type="video/mp4" />
+					<source src="https://res.cloudinary.com/dj046hh4m/video/upload/v1762072124/honeycomb_bg_ifkes8.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 

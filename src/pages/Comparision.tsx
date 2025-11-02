@@ -1,5 +1,4 @@
 import '../styles/comparision.scss'
-import timelineVideo from '../assets/sphere.mp4'
 import { Timeline } from '../components/Timeline';
 import { Element } from 'react-scroll';
 export default function Comparision() {
@@ -25,7 +24,7 @@ export default function Comparision() {
             <div className='comparision-timeline-section'>
                 <div className="comparision-content-video">
                     <video autoPlay loop muted playsInline>
-                        <source src={timelineVideo} type="video/mp4" />
+                        <source src="https://res.cloudinary.com/dj046hh4m/video/upload/v1762072123/sphere_uyvxzh.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                     {/* Overlay Content */}
