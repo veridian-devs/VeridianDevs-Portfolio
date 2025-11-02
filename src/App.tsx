@@ -9,6 +9,7 @@ import Team from './pages/Team';
 import { useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { Link } from 'react-scroll';
+import FAQs from './pages/FAQs';
 const Logo = () => {
 
 	return (
@@ -89,6 +90,7 @@ export default function App() {
 			<Comparision />
 			<Services />
 			<Team />
+			<FAQs/>
 			<Footer />
 		</main>
 	)

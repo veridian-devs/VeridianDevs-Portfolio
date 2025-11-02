@@ -1,0 +1,96 @@
+@use "./font";
+
+section.faq-section {
+	border-radius: 50px 50px 0 0;
+	padding: clamp(20px, 3vw, 60px);
+
+	div.faq-heading-section {
+		h5 {
+			font-family: "BW-Gradual-Bold", sans-serif;
+			font-size: clamp(2rem, 5.5vw, 6rem);
+			-webkit-text-stroke: 1px #31ff41;
+			color: transparent;
+		}
+		p {
+			font-family: "Urbanist", sans-serif;
+			font-size: clamp(1.25rem, 2vw, 2.5rem);
+			color: #666666;
+			line-height: 1.6;
+		}
+	}
+
+	div.faq-content-section {
+		margin-top: clamp(20px, 3vw, 40px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: "Urbanist", sans-serif;
+		font-size: clamp(1rem, 2vw, 2rem);
+
+		div.faq-item {
+			width: 60%;
+			padding: clamp(15px, 3vw, 30px) 0;
+			border-bottom: 1px solid #31ff41;
+			overflow: hidden;
+
+			div.quesBx {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				cursor: pointer;
+				h6 {
+					font-family: "Urbanist", sans-serif;
+					font-size: clamp(1.25rem, 2vw, 2rem);
+					color: #888;
+				}
+				svg.closed {
+					font-size: clamp(1rem, 2vw, 2rem);
+					color: #31ff41;
+					rotate: -90deg;
+					transition: all 0.3s ease;
+				}
+			}
+
+			// --- CHANGE 3: Modified <p> for "closed" state ---
+			p {
+				opacity: 0;
+				font-family: "Urbanist", sans-serif;
+				font-size: clamp(1rem, 1.6vw, 1.75rem);
+				color: #666666;
+				line-height: 1.6;
+
+				// Start with no height and no margin
+				max-height: 0;
+				margin-top: 0;
+
+				// Add transitions for smooth opening/closing
+				transition: max-height 0.4s ease-out, margin-top 0.4s ease-out;
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			// --- CHANGE 4: Added .open state styles ---
+			// These styles apply when .faq-item has the 'open' class
+			&.open {
+				// Target the icon and rotate it to 0deg (points down)
+				div.quesBx {
+					svg.closed {
+						rotate: 0deg;
+					}
+				}
+
+				// Expand the <p> tag
+				p {
+					opacity: 1;
+					// Set a max-height larger than any possible answer
+					max-height: 500px;
+					// Restore the margin-top you originally had
+					margin-top: clamp(10px, 2vw, 20px);
+					transition: all 0.5s ease-in;
+				}
+			}
+		}
+	}
+}
